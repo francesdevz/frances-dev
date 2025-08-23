@@ -122,7 +122,7 @@ export function TechStacksMap() {
       {categories.map((category, categoryIndex) => (
         <div key={category.name} className="mb-12">
           <p className="relative z-10 mt-4 mb-4 text-lg text-white opacity-90 text-left">{category.name}</p>
-          <div className="grid grid-cols-4 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 min-[200px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-3">
             {category.features.map((feature, index) => {
               const globalIndex =
                 categories.slice(0, categoryIndex).reduce((acc, curr) => acc + curr.features.length, 0) + index
@@ -158,13 +158,8 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col border-t border-l border-r border-b sm:border-b-0 sm:border-r-0 sm:last:border-r sm:last:border-b relative group/feature dark:border-neutral-800 p-4 sm:p-6 md:p-8 lg:p-10",
-        "sm:odd:border-r sm:even:border-r-0",
-        "[&:nth-child(4n)]:border-r-0",
-        "sm:[&:nth-child(5n)]:border-r-0",
-        "md:[&:nth-child(6n)]:border-r-0",
-        "lg:[&:nth-child(6n)]:border-r-0",
-        "xl:[&:nth-child(7n)]:border-r-0",
+        "flex flex-col items-center justify-center border rounded-lg relative group/feature dark:border-neutral-800 p-3 min-[400px]:p-4 sm:p-5",
+        "transition-all duration-200 hover:shadow-lg hover:border-neutral-500"
       )}
     >
       {index < totalFeatures - 3 && (
@@ -173,10 +168,12 @@ const Feature = ({
       {index >= totalFeatures - 3 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
       )}
-      <div className="mb-2 sm:mb-3 md:mb-4 relative z-10 flex justify-center">{icon}</div>
-      <div className="text-center relative z-10">
+      <div className="mb-1 sm:mb-2 relative z-10 flex justify-center scale-90 min-[400px]:scale-100">
+        {icon}
+      </div>
+      <div className="text-center relative z-10 w-full">
         <div className="hidden group-hover/feature:block absolute left-0 top-1/2 transform -translate-y-1/2 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-neutral-500 transition-all duration-200 origin-center" />
-        <span className="text-xs sm:text-sm group-hover/feature:translate-x-1 sm:group-hover/feature:translate-x-2 transition duration-200 inline-block text-white-100 dark:text-white-100">
+        <span className="text-[10px] min-[300px]:text-xs min-[400px]:text-sm truncate w-full px-1 group-hover/feature:translate-x-1 transition duration-200 inline-block text-white dark:text-white">
           {title}
         </span>
       </div>
