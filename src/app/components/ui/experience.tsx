@@ -4,7 +4,7 @@ import { PointerHighlight } from "./pointer-highlight"
 const Experiences = () => {
     return (
         <div 
-            className="relative flex min-h-screen w-full flex-col items-center justify-start overflow-hidden px-4 sm:px-6 lg:px-8"
+            className="relative flex min-h-screen w-full flex-col items-center justify-start overflow-hidden px-4 sm:px-6 lg:px-8 [@media(min-width:200px)_and_(max-width:399px)]:mb-50"
             id="experience"
         >            
             <div className="w-full max-w-6xl mx-auto flex flex-col gap-8 md:gap-12 mt-20">
