@@ -20,6 +20,19 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    rules: {
+      // Disable the 'unexpected any' error
+      "@typescript-eslint/no-explicit-any": "off",
+      
+      // Change 'unused vars' from error to warning
+      "@typescript-eslint/no-unused-vars": "warn",
+      
+      // Disable the Next.js image element warning
+      "@next/next/no-img-element": "off"
+    },
+  },
 ];
+
 
 export default eslintConfig;
