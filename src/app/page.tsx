@@ -7,22 +7,11 @@ import { HeroParallaxMain } from "./components/ui/hero-parallax-component";
 import TechStacks from "./components/ui/techstack";
 import WorkWithMeForm from "./components/ui/Form";
 import Footer from "./components/ui/footer";
-import LoadingScreen from "./components/ui/LoadingScreen"
+
 
 export default function Home() {
-
-  const [isLoading, setIsLoading] = useState(true)
-
-  const handleLoadingComplete = () => {
-    setIsLoading(false)
-  }
-
   return (
-    <>
-      {isLoading ? (
-        <LoadingScreen onComplete={handleLoadingComplete} duration={4000} />
-      ) : (
-        <div>
+    <div>
           <NavigationBar/>
           <BackgroundRippleEffect/>
           <Experiences/>
@@ -30,9 +19,7 @@ export default function Home() {
           <TechStacks/>
           <WorkWithMeForm/>
           <Footer/>
-        </div>
-      )}
-    </>
+    </div>
   );
 
 }
